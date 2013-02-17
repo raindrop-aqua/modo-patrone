@@ -28,7 +28,7 @@ def _execute_service(url, data):
     try:
         method = urlfetch.POST
         headers = {"Content-Type": "application/json"}
-        res = urlfetch.fetch(url=url, payload=data, method=method, headers=headers)
+        res = urlfetch.fetch(url=url, payload=data, method=method, headers=headers, deadline=10)
         if res.status_code == 200:
             return json.loads(res.content, "utf-8")
     except Exception, ex:
