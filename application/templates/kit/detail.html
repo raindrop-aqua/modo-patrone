@@ -1,0 +1,99 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="span10">
+    <div class="well">
+        <table class="table">
+            {% if kit %}
+            <tr>
+                <th>Kit Name</th>
+                <td>{{ kit.kit_name }}</td>
+            </tr>
+            <tr>
+                <th>Author</th>
+                <td>{{ kit.author.author_name }}</td>
+            </tr>
+            <tr>
+                <th>Category</th>
+                <td>{{ kit.category.category_name }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td><pre>{{ kit.description }}</pre></td>
+            </tr>
+            <tr>
+                <th>View Count</th>
+                <td>{{ kit.view_count }}</td>
+            </tr>
+            <tr>
+                <th>Download Count</th>
+                <td>{{ kit.download_count }}</td>
+            </tr>
+            <tr>
+                <th>Updated</th>
+                <td>{{ kit.update_datetime }}</td>
+            </tr>
+            {% endif %}
+        </table>
+    </div>
+</div>
+
+
+<!--<div class="row">-->
+    <!--<div id="grid-content">-->
+        <!--<div class="span4">-->
+            <!--<div class="well">-->
+                <!--<h2 class="app_title">-->
+                    <!--<a href="https://itunes.apple.com/jp/app/line-machigai-tanshi/id577012531?mt=8&uo=2" title="LINE まちがい探し" target="_brank">LINE まちがい探し</a>-->
+                <!--</h2>-->
+                <!--<a class="thumbnail" data-toggle="modal" href="#577012531" title="LINE まちがい探し" target="_brank">-->
+                    <!--<img src="http://a1346.phobos.apple.com/us/r1000/086/Purple/v4/c1/e1/ff/c1e1ff70-8b21-e6f0-0f1a-ee7ba2961ebe/mzl.fywhtvmp.100x100-75.png" alt="LINE まちがい探し">-->
+                <!--</a>-->
+                <!--<table class="table table-condensed app_data">-->
+                    <!--<tbody><input id="577012531-type" type="hidden" name="rankType" value="free">-->
+                    <!--<tr>-->
+                        <!--<td>順位</td>-->
+                        <!--<td class="app_rank">1</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td>価格</td>-->
+                        <!--<td>無料</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td>カテゴリ</td>-->
+                        <!--<td>ゲーム</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td>開発</td>-->
+                        <!--<td>NAVER Japan Corporation</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td>リリース</td>-->
+                        <!--<td class="app_release">2013-02-04</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td>twitter</td>-->
+                        <!--<td class="app_twitter">5</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td>facebook</td>-->
+                        <!--<td class="app_facebook">150</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td>hatena</td>-->
+                        <!--<td class="app_hatena">1</td>-->
+                    <!--</tr>-->
+                    <!--</tbody>-->
+                <!--</table>-->
+                <!--<div class="center"><a class="btn-mini btn-success" data-toggle="modal" href="#577012531">ランキング履歴</a> <a-->
+                        <!--class="btn-mini btn-primary" data-toggle="modal" href="#577012531-detail">アプリ詳細</a> <a-->
+                        <!--class="btn-mini btn-info"-->
+                        <!--href="https://itunes.apple.com/jp/app/line-machigai-tanshi/id577012531?mt=8&uo=2"-->
+                        <!--target="_brank">App Store</a> <a class="btn-mini btn-danger"-->
+                                                         <!--href="http://www.google.co.jp/search?&q=LINE まちがい探し"-->
+                                                         <!--target="_brank">Google</a></div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+
+{% endblock %}
