@@ -2,6 +2,7 @@
 {% block body %}
 <div class="span10">
     <h1 class="page-title">Kits</h1>
+
     <div class="well">
         <table class="table">
             <thead>
@@ -18,9 +19,8 @@
             <tbody>
             {% for kit in kits %}
             <tr>
-                <input type="hidden" value="{{ kit.kit_id }}">
-                <td><i class='icon-cog'></i></td>
-                <td>{{ kit.kit_name }}</td>
+                <td><a href="/kit/detail/{{ kit.kit_id }}"><i class='icon-cog'></i></a></td>
+                <td><a href="/kit/detail/{{ kit.kit_id }}">{{ kit.kit_name }}</a></td>
                 <td>{{ kit.view_count }}</td>
                 <td>{{ kit.download_count }}</td>
                 <td>{{ kit.category_name }}</td>
