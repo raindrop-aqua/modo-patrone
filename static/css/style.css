@@ -2,6 +2,14 @@ body {
     background-image: url("../img/wg_blurred_backgrounds_12.jpg");
 }
 
+h1.page-title {
+    color: cornflowerblue;
+}
+
+h3.sub-title {
+    color: gainsboro;
+}
+
 img {
     max-width: 100%;
     height: auto;
