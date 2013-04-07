@@ -1,0 +1,90 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+            <a class="brand" href="/">modo patrone</a>
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/kit">Kit</a></li>
+                    <li class="active"><a href="javascript:void(0);">for Kit Authors</a></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <h1 class="page-title">Create Author</h1>
+    <div class="span10 offset1 well">
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#home" data-toggle="tab">Profile</a></li>
+        </ul>
+        <div id="myTabContent" class="tab-content">
+            <form action="/author/create" method="POST">
+                <div class="tab-pane active in" id="home">
+                    {% if form.errors.exceptions %}
+                        <div class="alert alert-error">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            {% for error in form.errors.exceptions %}
+                                <i class='icon-exclamation-sign'></i> {{ error }}<br>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+
+                    {{ form.author_id }}
+
+                    {{ form.author_name.label }}
+                    {{ form.author_name(class="input-middle")|safe }}
+                    {% if form.author_name.errors %}
+                        <div class="alert alert-error">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            {% for error in form.author_name.errors %}
+                                <i class='icon-exclamation-sign'></i> {{ error }}<br>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+
+                    {{ form.password.label }}
+                    {{ form.password(class="input-large") }}
+                    {% if form.password.errors %}
+                        <div class="alert alert-error">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            {% for error in form.password.errors %}
+                                <i class='icon-exclamation-sign'></i> {{ error }}<br>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+
+                    {{ form.password_validate.label }}
+                    {{ form.password_validate(class="input-large") }}
+                    {% if form.password_validate.errors %}
+                        <div class="alert alert-error">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            {% for error in form.password_validate.errors %}
+                                <i class='icon-exclamation-sign'></i> {{ error }}<br>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+
+                    {{ form.mail_address.label }}
+                    {{ form.mail_address(class="input-xlarge") }}
+                    {% if form.mail_address.errors %}
+                        <div class="alert alert-error">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            {% for error in form.mail_address.errors %}
+                                <i class='icon-exclamation-sign'></i> {{ error }}<br>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="btn-toolbar">
+                    <button class="btn btn-primary" onclick="submit();"><i class="icon-save"></i> Save</button>
+                    <div class="btn-group">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

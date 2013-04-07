@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% block body %}
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="container-fluid">
+                <a class="brand" href="/">modo patrone</a>
+                <div class="nav-collapse collapse">
+                    <ul class="nav">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/kit">Kit</a></li>
+                        <li class="active"><a href="javascript:void(0);">for Kit Authors</a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <h1 class="page-title">Author</h1>
+        <h3 class="sub-title">modo kit の製作者になろう！</h3>
+        <div class="row">
+            <div class="span4 offset4 well">
+                <legend>サインイン</legend>
+{#                <div class="alert alert-error">#}
+{#                    <a class="close" data-dismiss="alert" href="#">×</a>Incorrect Username or Password!#}
+{#                </div>#}
+                <form method="POST" action="/author/signin" accept-charset="UTF-8">
+                    <input type="text" id="e-mail" class="span4" name="e-mail" placeholder="E Mail Address">
+                    <input type="password" id="password" class="span4" name="password" placeholder="Password">
+                    <button type="submit" name="submit" class="btn btn-info btn-block">サインイン</button>
+                </form>
+                <span class="pull-right">or <a href="/author/create">新規登録</a></span>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

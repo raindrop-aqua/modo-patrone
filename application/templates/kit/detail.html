@@ -1,7 +1,22 @@
 {% extends "layout.html" %}
 {% block body %}
-<div class="span10">
-    <div class="well">
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+            <a class="brand" href="/">modo patrone</a>
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <li><a href="/">Home</a></li>
+                    <li class="active"><a href="javascript:void(0);">Kit</a></li>
+                    <li><a href="/author">for Kit Authors</a></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <h1 class="page-title">Kit</h1>
+    <div class="span10 offset1 well">
         <table class="table">
             {% if kit %}
             <tr>
@@ -36,7 +51,6 @@
         </table>
     </div>
 </div>
-
 
 <!--<div class="row">-->
     <!--<div id="grid-content">-->

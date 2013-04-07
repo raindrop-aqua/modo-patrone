@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+            <a class="brand" href="/">modo patrone</a>
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <li><a href="/">Home</a></li>
+                    <li class="active"><a href="javascript:void(0);">Kit</a></li>
+                    <li><a href="/author">for Kit Authors</a></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <h1 class="page-title">Kit</h1>
+    <h3 class="sub-title">素晴らしいKitをあなたに！</h3>
+    <div class="row-fluid">
+        <div class="span3 well">
+            <div class="sidebar-nav">
+                <ul class="nav nav-list">
+                    <li class="nav-header">Category</li>
+                    <li class="active"><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                    <li class="nav-header">Tag</li>
+                    <li><a href="#">Link</a></li>
+                </ul>
+            </div><!--/.well -->
+        </div><!--/span-->
+        <div class="span9 well">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th style="width: 16px;">&nbsp;</th>
+                    <th>Kit Na me</th>
+                    <th>View Count</th>
+                    <th>Download Count</th>
+                    <th>Category</th>
+                    <th>Updated</th>
+                </tr>
+                </thead>
+                {% if kits %}
+                    <tbody>
+                    {% for kit in kits %}
+                        <tr>
+                            <td><a href="/kit/{{ kit.kit_id }}"><i class='icon-cog'></i></a></td>
+                            <td><a href="/kit/{{ kit.kit_id }}">{{ kit.kit_name }}</a></td>
+                            <td>{{ kit.view_count }}</td>
+                            <td>{{ kit.download_count }}</td>
+                            <td>{{ kit.category_name }}</td>
+                            <td>{{ kit.update_datetime }}</td>
+                        </tr>
+                    {% endfor%}
+                    </tbody>
+                {% endif %}
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
